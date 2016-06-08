@@ -1,0 +1,31 @@
+<%= render 'layouts/light_header' %>
+
+
+<div class="sign-modal">
+
+
+<div class="sign-text">
+Sign in
+</div>  
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+    <div class="start-input-container">
+    <%= f.input :email, input_html: { :class => "start-form"}, placeholder: 'Email', label: false %>
+    </div>
+
+    <div class="start-input-container">
+    <%= f.input :password, input_html: { :class => "start-form"}, placeholder: 'Password', label: false %>
+    </div>
+   <div class="btn-input">
+    <%= f.submit "Sign in", class: "btn square-btn" %>
+  </div>
+<% end %>
+
+<%= link_to "Forgot password?", '/owners/get-started', class: "get-started-close" %>
+<div class="row"></div>
+<p3> Don't have a Rezy account? <%= link_to "Sign up today.", '/owners/get-started', class: "get-started-close" %> </p3>
+
+
+
+</div>

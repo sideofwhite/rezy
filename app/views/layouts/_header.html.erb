@@ -1,0 +1,67 @@
+<div class="fixed-header">
+<div class="regular-header">
+
+<div class="logo-box">
+<div class="header_logo"></div>
+</div>
+
+<% if user_signed_in? %>
+
+   
+
+<div class="dropdown head-drop-box">
+
+<i class="material-icons dropdown-arrow">arrow_drop_down</i>
+
+<div class="avatar-nav-border">
+<div class="avatar-nav">
+<%= image_tag(current_user.avatar.url) %>
+</div>
+</div>
+
+ <div class="head-text" style="padding-left: 0px;"><%= current_user.firstName %></div>
+ 
+  <div class="dropdown-content">
+  	<div class="drop-item view-profile">
+  	<%= current_user.firstName %><%= current_user.lastName %>
+  	<div class="light-small">View Profile</div>
+  </div>
+   <div class="drop-item">+ New Property</div>
+   <div class="drop-item">	<%= current_user.class %></div>
+   <div class="drop-item">
+   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>
+   </div>
+</div>
+</div>
+
+
+
+ 
+
+
+
+<% else %>
+
+<div class="hide-mobile">
+<%= link_to "Get started", '/owners/get-started', class: "btn yellow header-btn" %>
+<%= link_to new_user_session_path do %>
+<div class="header-link">
+<%= link_to "Sign in", login_path %>
+</div>
+<%= link_to "Support", help_path, class: "header-link" %>
+<div class="header-link">514-632-6815</div>
+<i class="material-icons" style="margin-left: 15px; float: right; line-height: 60px; font-size: 16px;">phone</i>
+</div>
+
+<% end %>
+
+
+
+
+<% end %>
+
+
+
+</div>
+</div>
+

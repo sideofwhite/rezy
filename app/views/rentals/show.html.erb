@@ -1,0 +1,81 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="width8-dashboard">
+
+
+
+<div class="property-banner" style="background-image: url(<%= @rental.image.url %>);">
+
+</div>
+
+<div class="property-icon-border">
+<i class="material-icons property-icon">home</i> 
+</div>
+
+<div style="text-align: center;">
+
+<div class="address-box"><%= @rental.address %></div>
+<div class="address-info">
+<%= @rental.city %>,
+<%= @rental.province %>
+</div>
+<div class="address-info">
+<%= @rental.postal %>
+</div>
+
+<hr/>
+
+<div class="dashboard-padding" style="padding-top: 0px;">
+
+
+<div class="center-container">
+<div class="item-term orange">
+Active Issues
+</div>
+
+<div style="margin-bottom: 30px;">
+<% @issues.each do |issue| %>
+<%= link_to rental_issue_path(issue.rental, issue) do %>
+<div class="list-border">
+<div class="small-head">
+<%= issue.title %>
+</div>
+<% end %>
+</div>
+<% end %>
+</div>
+
+
+
+
+
+<div class="item-term">
+Closed Issues
+</div>
+
+
+<div class="item-term">
+Checkups
+</div>
+
+</div>
+</div>
+
+
+</div>
+</div>
+
+
+<div class="width3-dashboard">
+<div style="margin-top: 30px;"></div>
+<div class="dashboard-padding box">
+<i class="material-icons width3-icon">phone</i>  
+<i class="material-icons width3-icon">email</i>
+
+</div>
+</div>
+
+
+
+

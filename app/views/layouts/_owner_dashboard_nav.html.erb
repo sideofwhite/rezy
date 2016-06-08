@@ -1,0 +1,33 @@
+
+<div class="left-navbar">
+
+<div class="title-left-wrapper">
+<div class="sidebar-left-icon"></div>Manage
+</div>
+
+<%= link_to dashboard_path do %>
+<div class="<%= is_active?('/dashboard') %>">
+Dashboard
+</div>
+<% end %>
+
+
+<%= link_to rentals_path do %>
+<div class="<%= is_active?('/rentals') %>">
+Maintanence
+</div>
+<% end %>
+
+<%= link_to rentals_path do %>
+<div class="<%= is_active?('/rentals') %>">
+Applicants
+</div>
+<% end %>
+
+
+
+
+
+</div>
+
+

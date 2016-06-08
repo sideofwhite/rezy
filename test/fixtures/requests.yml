@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  salary: MyString
+  occupation: MyString
+  smoker: false
+  petowner: false
+
+two:
+  salary: MyString
+  occupation: MyString
+  smoker: false
+  petowner: false

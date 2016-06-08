@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= @request.salary %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @request.occupation %>
+</p>
+
+<p>
+  <strong>Smoker:</strong>
+  <%= @request.smoker %>
+</p>
+
+<p>
+  <strong>Petowner:</strong>
+  <%= @request.petowner %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

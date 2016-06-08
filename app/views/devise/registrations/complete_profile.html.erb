@@ -1,0 +1,50 @@
+<style>body{background: #1c1c1c;} </style>
+
+<div style="color: #fff; font-weight: 900; font-size: 30px; text-align: center; margin-top: 20px;">
+Rezy
+</div>
+
+<div class="get-started-container">
+
+<div class="get-started-head" style="font-size: 40px;">Complete your profile</div>
+<div class="get-started-head get-started-sub">Add an image so we know who you are. This makes it easier for us.</div>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+ 
+<div class="avatar-nav-border avatar-full-border">
+
+<div class="avatar-full">
+<%= image_tag(current_user.avatar.url) %>
+</div>
+
+</div>
+
+
+
+<div class="userimagecomplete">
+
+<div class="addimage">
+<%= f.input :avatar, input_html: { :style => "opacity:0;"  }, label: false %>
+</div>
+
+<img id="blah" />
+</div>
+
+
+<hr/>
+
+
+     <div class="start-input-container">
+    <div class="start-label">Phone</div>
+    <%= f.input :email, input_html: { :class => "start-form"}, placeholder: 'Password', label: false %>
+    </div>
+
+
+
+  <div class="btn-input">
+    <%= f.submit "Done", class: "btn outline-white" %>
+    <%= link_to "I'll do this later", dashboard_path, class: "get-started-close" %>
+  </div>
+<% end %>
+
+</div>

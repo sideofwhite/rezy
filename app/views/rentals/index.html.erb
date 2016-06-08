@@ -1,0 +1,42 @@
+
+<div class="col-md-8 col-md-offset-1 left-nav-offset">
+
+
+<h2>Properties</h2>
+<hr/>
+ 
+
+
+<div class="row">
+  <% @rentals.each do |rental| %>
+
+<div class="col-md-6">
+  
+  <%= link_to rental_path(rental) do %>
+  <div class="card-header">
+  <div class="property-banner grid" style="background-image: url(<%= rental.image.url %>);">
+  <div class="property-grid-details grid-text"><%= rental.address %></div>
+  </div>
+</div>
+  <% end %>
+  <div class="card-footer">
+
+  </div>
+
+</div>
+  <% end %>
+
+</div>
+
+
+<% if @rentals.count == 0 %>
+
+<div class="align-middle-vertical left-nav-offsets">
+<div class="rental-image"></div>
+You have no properties yet. Add one
+</div>
+
+<% end %>
+
+
+</div>

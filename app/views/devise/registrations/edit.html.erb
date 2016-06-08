@@ -1,0 +1,81 @@
+<%= render 'layouts/dashboard_nav' %>
+
+<div class="width8-dashboard">
+  <div class="dashboard-padding">
+  <div class="sans-header">Your Profile</div>
+<div class="sans-subheader">Both guests and hosts must fill out a complete profile.</div>
+<hr/>
+<div class="width4">
+
+
+
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+ 
+ 
+
+
+ <div class="avatar-full">
+<%= image_tag(current_user.avatar.url) %>
+</div>
+
+
+
+<div class="userimagecomplete">
+
+<div class="addimage">
+<%= f.input :avatar, input_html: { :style => "opacity:0;"  }, label: false %>
+</div>
+
+<img id="blah" />
+</div>
+
+
+<hr/>
+
+<div class="field">
+    <label>Email</label>
+    <%= f.email_field :email, autofocus: true, class: "input-form" %>
+    <div class="small-light" style="margin-top: 10px;">Please make sure this is a working email so we can contact you.</div>
+</div>
+  
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+<hr/>
+  <div class="field">
+  
+  <label>Current password</label> 
+    <%= f.password_field :current_password, autocomplete: "off", class: "input-form" %>
+<div class="small-light" style="margin-top: 10px;">Please enter your current email to confirm any changes.</div>
+  </div>
+
+  <div class="btn-input">
+    <%= f.submit "Update", class: "btn-green" %>
+  </div>
+<% end %>
+
+</div>
+</div>
+</div>
+
+<script>
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $("#user_image").change(function(){
+        readURL(this);
+    });
+
+  </script>
+

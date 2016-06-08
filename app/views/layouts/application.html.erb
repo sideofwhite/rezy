@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="theme-color" content="#333" />
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/flexboxgrid/6.1.1/flexboxgrid.min.css" type="text/css" />
+  	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Bitter:400,700|Lato:600' rel='stylesheet' type='text/css'>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>RentalManager</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<%= render 'layouts/header' unless @skip_header or @dashboard %>
+    <%= render 'layouts/dashboard_header' if @dashboard %>
+    <%= yield %>
+     <%= render 'layouts/footer' if @bottom %>
+  </body>
+</html>
