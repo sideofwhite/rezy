@@ -6,6 +6,14 @@ class RentalsController < ApplicationController
   @skip_header = true
   @rental = Rental.find(params[:id])
   end
+  
+  def issues
+     @dashboard = true
+  end
+
+  def applicants
+    @dashboard = true
+  end
 
   # GET /rentals
   # GET /rentals.json

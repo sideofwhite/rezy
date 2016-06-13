@@ -35,6 +35,8 @@ end
   # owners
   get '/dashboard', to: 'pages#dashboard'
   get '/dashboard/rentals', to: 'rentals#index'
+  get '/manage/issues', to: 'rentals#issues', as: :issues
+  get '/manage/applicants', to: 'rentals#applicants', as: :applicants
   #applicants
   get '/a/dashboard', to: 'pages#applicant_dashboard'
   #tenants

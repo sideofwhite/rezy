@@ -1,4 +1,4 @@
-<style>body{background-color: #f7f9fa;}</style>
+<style>body{background-color: #f3f5f7;}</style>
 
 <div class="col-md-12 left-nav-offset">
 
@@ -6,7 +6,7 @@
 <% if @rentals.present? %>
 Rented Properties
 <hr/>
-<% rentals.each do |rental| %>
+<% @rentals.each do |rental| %>
 <%= rental.address %>
 <% end %>
 <% end %>
