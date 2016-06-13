@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def landing
   	@bottom = true 
-  	@skip_header = true
+  	
   end
   def dashboard
     @dashboard = true
