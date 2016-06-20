@@ -4,32 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :authenticate_user!, :authenticate_tenant!, :configure_permitted_parameters, if: :devise_controller?
   helper_method :current_account, :current_account_type, :account_signed_in?
+
   
 
-  def current_account
-    if current_owner
-    @current_account = current_owner
-    elsif current_tenant
-    @current_account = current_tenant
-    end
-  end
-
-
-  def current_account_type
-  if current_owner
-  "Owner"
-  end
-  end
-
-  def account_signed_in?
-  current_account != nil
-  end
-
-  def store_location
-  session[:previous_url] = request.fullpath unless request.fullpath =~ /\/users/
-  end
-
   protected
+ 
 
   def after_sign_in_path_for(resource)
   if resource.type == "Owner"
@@ -49,7 +28,7 @@ class ApplicationController < ActionController::Base
   	devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:firstName, :lastName, :email, :password, :current_password, :password_confirmation, :avatar, :type) }
   end
 
-  
+
 
 
 end

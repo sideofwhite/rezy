@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531201850) do
+ActiveRecord::Schema.define(version: 20160620155409) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -23,6 +23,45 @@ ActiveRecord::Schema.define(version: 20160531201850) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "features", force: :cascade do |t|
+    t.integer  "bed"
+    t.integer  "bath"
+    t.integer  "rent"
+    t.text     "available"
+    t.boolean  "dishwasher"
+    t.boolean  "washer_dryer"
+    t.boolean  "hardwood"
+    t.boolean  "deck"
+    t.boolean  "air"
+    t.boolean  "cat"
+    t.boolean  "dog"
+    t.boolean  "bbq"
+    t.text     "title"
+    t.text     "description"
+    t.boolean  "new_kitchen"
+    t.string   "neighbourhood"
+    t.integer  "rental_id"
+    t.boolean  "year_lease"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "sq_feet"
+    t.string   "property_type"
+    t.boolean  "furnished"
+    t.index ["rental_id"], name: "index_features_on_rental_id"
+  end
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
   create_table "galleries", force: :cascade do |t|
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -30,6 +69,8 @@ ActiveRecord::Schema.define(version: 20160531201850) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "rental_id"
+    t.index ["rental_id"], name: "index_galleries_on_rental_id"
   end
 
   create_table "issues", force: :cascade do |t|
@@ -63,6 +104,10 @@ ActiveRecord::Schema.define(version: 20160531201850) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "slug"
+    t.index ["slug"], name: "index_rentals_on_slug", unique: true
     t.index ["user_id"], name: "index_rentals_on_user_id"
   end
 

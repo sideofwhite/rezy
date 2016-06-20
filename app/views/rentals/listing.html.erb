@@ -1,37 +1,217 @@
-<style>body{background-color: #f3f5f7;}</style>
-
-<div class="property-banner listing-height" style=""></div>
-
-
-
-<div class="rental-head">
+<script src="//maps.google.com/maps/api/js?v=3.23&key=AIzaSyDxskzFu6_jYdQh8LYUNB0F3nLSjtaB3HI"></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 
 
 
+<div class="header_logo large-abs"></div>
+
+<div class="listing-wrapper">
 
 
-<div class="rental-head-section">
-<div class="address-box">
+
+
+<div id="owl-demo" class="owl-carousel owl-theme">
+<% @gallery_images.each do |gallery| %>
+<div class="carousel-image item" style="background-image: url(<%= gallery.image %>);"> </div>
+<% end %>
+
+  
+</div>
+
+<div class="customNavigation">
+  <i class="material-icons nav prev">chevron_left</i>
+<i class="material-icons nav next">chevron_right</i>
+</div>
+
+
+<div class="rental-head-section" style="margin-bottom: 40px;">
+ <div class="row">
+ <div class="col-md-6 col-md-offset-2">
+
+  <h1 class="listing-name"><%= @rental.feature.bed %> Bed, <%= @rental.feature.bath %> Bath House</h1>
+
+  <div>
+  
+  <div class="head-section-info">
+   <h5 class="small-h5">Available</h5>
+   <div class="head-section-info-text">
+     <%= @rental.feature.available %>
+   </div>
+  </div>
+
+   <div class="head-section-info">
+    <h5 class="small-h5">Deposit</h5>
+    <div class="head-section-info-text">
+      <%= @rental.feature.available %>
+    </div>
+  </div>
+
+   <% if @rental.feature.year_lease? %>
+   <div class="head-section-info" style="border: 0;">
+    <h5 class="small-h5">Lease Terms</h5>
+    <div class="head-section-info-text">Yearly</div>
+   </div>
+  <% end %>
+
+  </div>
+  </div>
+
+  <div class="col-md-2 rent-box">
+  <div class="rent-box-padding">
+  <div class="rent-box-number-wrapper">
+   <span class="rent-box-number">
+    <%= @rental.feature.rent %>
+   
+   <span class="monthly-rent">/mo</span>
+   </span>
+   </div>
+  </div>
+  </div>
+
+</div>
+</div>
+
+
+
+
+<div class="row">
+
+<div class="col-md-5 col-md-offset-2">
+ <p class="title"><%= @rental.feature.title %></p>
+ <p class="description"><%= @rental.feature.description %></p>
+ <hr/>
+ <div class="section-header">Pet Policy</div>
+ 
+ <div class="row">
+ 
+ <div class="col-md-4 feature-margin">
+  <div>
+  	<div class="feature-icon cat"></div>
+  <% if @rental.feature.cat? %>
+   <div class="feature-text">Cats allowed</div>
+   <% else %>
+   <div class="feature-text not-allowed">No cats allowed</div>
+  <% end %>
+  </div>
+  </div>
+
+  <div class="col-md-4 feature-margin">
+   <div>
+    <div class="feature-icon dog"></div>
+     <% if @rental.feature.dog? %>
+     <div class="feature-text">Dogs allowed</div>
+     <% else %>
+     <div class="feature-text not-allowed">No dogs allowed</div>
+    <% end %>
+   </div>
+  </div>
+
+ </div>
+
+<hr/>
+
+<div class="section-header">Features</div>
+
+<div class="row">
+
+<%= render 'feature_list', locals: { rental: @rental } %>
+
+
+
+</div>
+
+<div class="title-box" style="margin-top: 60px; margin-bottom: -34px;">
+Location
+</div>
+
+</div>
+
+<div class="col-md-2 col-md-offset-1">
+ <div class="sidebar-box">
+ 	<div class="rent-box-padding">
+ 		<%= @rental.requests.count %> people are interested 
+    </div>
+ </div>
+</div>
+
+</div>
+
+
+
+<div class="rental-head-section" style="padding: 0px;">
+<div class="row middle-md">
+
+<div class="col-md-2 col-md-offset-2">
+
+
+
+
+
+<h5 class="large-h5">Street</h5>	
 <%= @rental.address %>
-<%= @rental.postal %>
+<hr/>
+<h5 class="large-h5">City</h5>	
 <%= @rental.city %>
-</div>
-</div>
-
-<div class="rental-head-button">
-Apply for Viewing
-</div>
-
-
-
-
-
+<hr/>
+<h5 class="large-h5">Neighbourhood</h5>
+<%= @rental.feature.neighbourhood %>
 
 
 
 </div>
 
 
+<div class="col-md-7 col-md-offset-1">
+ <div id="map" style='width: 100%; height: 500px;'></div>
+</div>
 
 
 </div>
+</div>
+
+<div class="content-container">
+<div class="row">
+<div class="col-md-4 col-md-offset-2">
+<p class="description-small">
+In most states, the law requires landlords to return any unused security deposit to the former tenant within 30 days, though it could be up to 60 days depending on where you live.
+</p>
+</div>
+<div class="col-md-4">
+<p class="description-small">
+In most states, the law requires landlords to return any unused security deposit to the former tenant within 30 days, though it could be up to 60 days depending on where you live.
+</p>	
+</div>
+</div>
+</div>
+
+
+<div class="rental-apply-banner">
+
+<div class="row">
+ <div class="col-md-6 col-md-offset-2">
+  <div class="apply-encourage">
+  Interested in seeing this property?
+  </div>
+</div>
+
+<div class="col-md-2">
+  <%= link_to "Apply to view", apply_start_path, class: "apply-action" %>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  handler.getMap().setZoom(14);
+});
+
+</script>

@@ -37,18 +37,22 @@ def update
 end
 
 
+
+
+
+
 protected
 
-
   def after_sign_up_path_for(resource)
+  sign_in(resource)
   if resource.type == "Owner"
-  '/complete-profile'
-  elsif resource.type == "Tenant"
-  '/'
-  elsif resource.type == "Applicant"
   '/dashboard'
+  elsif resource.type == "Tenant"
+  '/t/dashboard'
+  elsif resource.type == "Applicant"
+  'a/dashboard'
   elsif resource.type == "Admin"
-  '/'
+  '/admin/dashboard'
   end
   end
 

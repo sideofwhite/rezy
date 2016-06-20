@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Features</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bed</th>
+      <th>Bath</th>
+      <th>Rent</th>
+      <th>Available</th>
+      <th>Dishwasher</th>
+      <th>Washer dryer</th>
+      <th>Hardwood</th>
+      <th>Deck</th>
+      <th>Air</th>
+      <th>Cat</th>
+      <th>Dog</th>
+      <th>Bbq</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>New kitchen</th>
+      <th>Neighbourhood</th>
+      <th>Rental</th>
+      <th>Year lease</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @features.each do |feature| %>
+      <tr>
+        <td><%= feature.bed %></td>
+        <td><%= feature.bath %></td>
+        <td><%= feature.rent %></td>
+        <td><%= feature.available %></td>
+        <td><%= feature.dishwasher %></td>
+        <td><%= feature.washer_dryer %></td>
+        <td><%= feature.hardwood %></td>
+        <td><%= feature.deck %></td>
+        <td><%= feature.air %></td>
+        <td><%= feature.cat %></td>
+        <td><%= feature.dog %></td>
+        <td><%= feature.bbq %></td>
+        <td><%= feature.title %></td>
+        <td><%= feature.description %></td>
+        <td><%= feature.new_kitchen %></td>
+        <td><%= feature.neighbourhood %></td>
+        <td><%= feature.rental %></td>
+        <td><%= feature.year_lease %></td>
+        <td><%= link_to 'Edit', edit_rental_feature_path(@rental, feature) %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

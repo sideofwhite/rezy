@@ -16,6 +16,7 @@ class PagesController < ApplicationController
   end
 
   def applicant_dashboard
+ 
   end
 
 end

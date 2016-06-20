@@ -3,8 +3,9 @@
 
 <div class="width8-dashboard">
 
-
-
+<%= @rental.latitude %>
+<%= @rental.longitude %>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@rental.latitude}%2C#{@rental.longitude}" %>
 <div class="property-banner" style="background-image: url(<%= @rental.image.url %>);">
 
 </div>

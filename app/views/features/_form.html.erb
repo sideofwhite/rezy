@@ -1,0 +1,30 @@
+<%= simple_form_for [@rental, @feature] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :bed %>
+    <%= f.input :bath %>
+    <%= f.input :rent %>
+    <%= f.input :available %>
+    <%= f.input :dishwasher %>
+    <%= f.input :washer_dryer %>
+    <%= f.input :hardwood %>
+    <%= f.input :deck %>
+    <%= f.input :air %>
+    <%= f.input :cat %>
+    <%= f.input :dog %>
+    <%= f.input :bbq %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :new_kitchen %>
+    <%= f.input :neighbourhood %>
+    <%= f.input :property_type %>
+    <%= f.input :sq_feet %>
+    <%= f.input :furnished %>
+    <%= f.input :year_lease %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn yellow" %>
+  </div>
+<% end %>

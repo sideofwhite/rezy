@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bed: 1
+  bath: 1
+  rent: 1
+  available: MyText
+  dishwasher: false
+  washer_dryer: false
+  hardwood: false
+  deck: false
+  air: false
+  cat: false
+  dog: false
+  bbq: false
+  title: MyText
+  description: MyText
+  new_kitchen: false
+  neighbourhood: MyString
+  rental: one
+  year_lease: false
+
+two:
+  bed: 1
+  bath: 1
+  rent: 1
+  available: MyText
+  dishwasher: false
+  washer_dryer: false
+  hardwood: false
+  deck: false
+  air: false
+  cat: false
+  dog: false
+  bbq: false
+  title: MyText
+  description: MyText
+  new_kitchen: false
+  neighbourhood: MyString
+  rental: two
+  year_lease: false

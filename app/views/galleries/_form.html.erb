@@ -1,10 +1,33 @@
-<%= simple_form_for(@gallery) do |f| %>
+<%= simple_form_for [@rental, @gallery], url: rental_galleries_path(@rental) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-  </div>
+<div class="blah2">
+<div class="addimageevent2">
+<%= f.input :image, input_html: { :style => "opacity:0;" }, label: false %>
+</div>
+</div>
+<img id="addnewslogo"/>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn yellow" %>
   </div>
 <% end %>
+
+
+<script>
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#addnewslogo').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $("#post_image").change(function(){
+        readURL(this);
+    });
+</script>

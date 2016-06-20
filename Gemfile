@@ -33,6 +33,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem "paperclip", "~> 5.0.0.beta1"
 gem 'simple_form'
+gem 'owlcarousel-rails'
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'friendly_id'
 
 group :production do
 gem 'pg'

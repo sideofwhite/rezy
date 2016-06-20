@@ -6,20 +6,22 @@ Rails.application.routes.draw do
   
 
   
+  
   resources :rentals do
   	resources :issues
   	resources :requests
     resources :galleries
+    resources :features
   end
   
  
 
   devise_for :users, :controllers => { :sessions => 'sessions' }, :skip => :registrations
   devise_for :owners, :applicants, :skip => :sessions, controllers: {registrations: :registrations}
-  devise_for :tenants, :admin, :skip => :sessions, :skip => :registrations
+  devise_for :tenants, :admin, :skip => [:sessions, :registrations]
 
   devise_scope :applicant do
- 
+  get "apply/get-started" => "registrations#new", as: :apply_start
   get "/complete-profile" => "registrations#complete_profile"
 end
 
