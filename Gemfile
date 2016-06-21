@@ -37,6 +37,7 @@ gem 'owlcarousel-rails'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'friendly_id'
+gem 'aws-sdk', '~> 2.3'
 
 group :production do
 gem 'pg'

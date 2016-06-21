@@ -7,6 +7,8 @@
 
 <% if user_signed_in? %>
 
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<%= current_user.class %>
 
 <div class="dropdown header-box pull-right">
 
@@ -16,27 +18,23 @@
 <%= image_tag(current_user.avatar.url) %>
 </div>
 </div>
-
- <div class="head-text" style="padding-left: 0px;"><%= current_user.firstName %></div>
+<div class="head-text" style="padding-left: 0px;"><%= current_user.firstName %></div>
  
-  <div class="dropdown-content">
-  	<div class="drop-item view-profile">
-  	<%= current_user.firstName %><%= current_user.lastName %>
-  	<div class="light-small">View Profile</div>
-  </div>
-   <div class="drop-item">+ New Property</div>
-   <div class="drop-item">	<%= current_user.class %></div>
-   <div class="drop-item">
-   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>
-   </div>
 </div>
-</div>
+
+
 
 
 <div class="header-box pull-right">
+<div class="head-text">Help</div>
 <div class="head-icon lifesaver"></div>
 </div>
  
+<div class="header-box pull-right">
+<div class="btn add-property">
+Add Property
+</div>
+</div>
 
 
 
