@@ -89,7 +89,6 @@ Rails.application.configure do
   #S3 Uploads
   config.paperclip_defaults = {
   storage: :s3,
-  :url => "s3-us-west-2.amazonaws.com",
   s3_credentials: {
     bucket: ENV.fetch('S3_BUCKET_NAME'),
     access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
