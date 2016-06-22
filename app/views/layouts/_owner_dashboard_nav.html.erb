@@ -1,33 +1,32 @@
+<div class="top-navbar">
+<div class="row">
 
-<div class="left-navbar">
 
-<div class="title-left-wrapper">
-<div class="sidebar-left-icon"></div>Manage
+<div class="col-md-3" style="border-right: 1px solid #2f2f2f;">
+
+
+<div class="list-item">
+Your Rentals
 </div>
 
-<%= link_to dashboard_path do %>
-<div class="<%= is_active?('/dashboard') %>">
-Dashboard
+
 </div>
+
+
+<div class="col-md-6 col-md-offset-1">
+
+
+<% if current_page?(controller: 'pages', action: 'dashboard') %>
+<h1 class="white-address">Dashboard</h1>
+<% elsif params[:controller] == 'rentals' && %w(show).include?(params[:action]) %>
+<h1 class="white-address"><%= @rental.address %></h1>
 <% end %>
 
-
-<%= link_to issues_path do %>
-<div class="<%= is_active?('/manage/issues') %>">
-Maintanence
 </div>
-<% end %>
-
-<%= link_to applicants_path do %>
-<div class="<%= is_active?('/manage/applicants') %>">
-Applicants
-</div>
-<% end %>
-
-
-
 
 
 </div>
+</div>
+
 
 

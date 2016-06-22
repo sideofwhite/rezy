@@ -4,7 +4,7 @@ class RentalsController < ApplicationController
 
   def listing
   @skip_header = true
-  @rental = Rental.find(params[:id])
+  @rental = Rental.friendly.find(params[:id])
   @gallery_images = @rental.galleries.order('created_at')
   @hash = Gmaps4rails.build_markers(@rental) do |rental, marker|
    marker.lat rental.latitude
@@ -33,7 +33,8 @@ class RentalsController < ApplicationController
   # GET /rentals/1
   # GET /rentals/1.json
   def show
-
+    @dashboard = true
+    @rentals = current_user.rentals.order('created_at desc')
     @issues = @rental.issues.where(:open => true).order('created_at desc')
   end
 
@@ -92,7 +93,7 @@ class RentalsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_rental
-      @rental = Rental.find(params[:id])
+      @rental = Rental.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

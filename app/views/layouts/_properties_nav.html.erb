@@ -1,0 +1,23 @@
+
+<% @rentals.each do |rental| %>
+
+<%= link_to rental_path(rental) do %>
+<div class="<%= property_is_active?(rental_path(rental)) %>">
+
+
+<div class="row middle-sm">
+
+<div class="col-sm-6">
+<div class="property-banner box-view" style="background-image: url(<%= rental.image.url %>);"></div>
+</div>
+
+<div class="col-sm-6">
+<%= rental.address %>
+</div>
+
+
+
+</div>
+</div>
+<% end %>
+<% end %>

@@ -20,9 +20,7 @@
         <td><%= request.occupation %></td>
         <td><%= request.smoker %></td>
         <td><%= request.petowner %></td>
-        <td><%= link_to 'Show', request %></td>
-        <td><%= link_to 'Edit', edit_request_path(request) %></td>
-        <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +28,9 @@
 
 <br>
 
-<%= link_to 'New Request', new_request_path %>
+<%= @rental.requests.count %>
+<% @rental.requests.each do |request| %>
+<% unless request.user.present? %>
+hello
+<% end %>
+<% end %>

@@ -4,6 +4,7 @@ body {
 	    color: #484848;
 	-webkit-font-smoothing: antialiased;
 	font-size: 17px;
+	background-color: #f5f5f5;
 
 
 }
@@ -51,7 +52,7 @@ a {
 
 h1 {
 	font-size: 65px;
-	font-weight: 700;
+	font-weight: 400;
 	line-height: 1.2;
 	
 
@@ -64,11 +65,26 @@ h1.banner-land {
 
 }
 
+h1.dash-welcome {
+	font-size: 44px;
+	margin: 0px;
+}
+
 h1.listing-name {
 	margin: 0px 0px 20px 0px;
 	font-size: 34px;
 	font-weight: 400;
 
+}
+
+h1.white-address {
+	line-height: 70px;
+	font-size: 26px;
+	color: #fff;
+	font-weight: 400;
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
 }
 
 p2 {
@@ -249,7 +265,7 @@ a:-webkit-any-link {
 	height: 60px;
 	background-color: #fff;
 	padding: 0px 0px 0px 20px;
-    border-bottom: 1px solid rgba(51,51,51,0.1);
+    border-bottom: 1px solid #dce0e0;
 
 }
 
@@ -611,12 +627,24 @@ textarea:focus, input:focus{
 .nav-list-item {
 
 	font-size: 14px;
-	display: block;
-     text-decoration: none;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(187, 187, 187);
+    line-height: 34px;
+    margin-top: 18px;
+
+}
+
+.list-item {
+
+	font-size: 11px;
+    text-decoration: none;
     color: #fff;
+    line-height: 70px;
+    text-transform: uppercase;
     font-weight: 600;
-    width: 100%;
-    padding: 15px 50px 15px 50px;
+    letter-spacing: 0.1em;
+    text-align: center;
 
 }
 
@@ -650,11 +678,11 @@ textarea:focus, input:focus{
 
 .nav-list-item.active {
 
-	background-color: #171034;
-	border-left: 3px solid #fc0;
-	padding-left: 47px;
 	
 	
+	border-radius: 2px;
+	color: #fff;
+	background-color: rgba(255,255,255,0.2);
    
 }
 
@@ -787,7 +815,7 @@ hr {
 width: 100%;
 height: 1px;
 border: 0; 
-border-top: 1px solid rgba(51,51,51,0.1);
+border-top: 1px solid #dce0e0;
 margin-top: 30px; 
 margin-bottom: 30px;
 padding: 0px; 
@@ -1774,7 +1802,7 @@ ul
     width: 50px;
     height: 42px;
     background-size: contain;
-    background-image: url(http://i.imgur.com/HsG0Dgl.png);
+    background-image: url(/assets/logo_yellow);
     background-repeat: no-repeat;
     background-position: center center;
     float: left;
@@ -1915,7 +1943,7 @@ position: relative; top: 0; right: 0; left: 0; z-index: 100;
 }
 
 .logo-box {
-	border-right: 1px solid rgba(51,51,51,0.1); 
+	border-right: 1px solid #dce0e0; 
 	height: 60px; 
 	float: left; 
 	padding-right: 15px;
@@ -1983,15 +2011,30 @@ p3 {
 
 .left-navbar {
     
-    overflow-x: auto;
-    overflow-y: scroll;
-    background: #f5f5f5; 
-    width: 220px; 
-    position: fixed; 
-    top: 123px; 
-    border-right: 1px solid #dce0e0; 
-    left: 0; bottom: 0;
-    padding: 30px 0px;
+   
+   border-right: 1px solid rgb(224,220,220);
+   position: fixed;
+   top: 131px;
+   left: 0px;
+   bottom: 0px;
+   width: 100%;
+   padding: 0px;
+   background-color: #fff;
+    
+ 
+}
+
+.left-navbar.applicant-dash {
+	top: 0px;
+}
+
+.top-navbar {
+	height: 70px;
+	background: #484848;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 61px;
 }
 
 .left-nav-wrapper {
@@ -2057,6 +2100,8 @@ p3 {
 }
 
 
+
+
 .property-banner.grid:after {
 	content: '';
     position: absolute;
@@ -2065,6 +2110,13 @@ p3 {
     bottom: 0;
     left: 0;
     background: linear-gradient(180deg, transparent 0%,rgba(0,0,0,0.8) 100%);
+}
+
+.property-banner.box-view {
+	height: 120px;
+	border: 1px solid rgb(222,220,220);
+	border-radius: 2px;
+
 }
 
 .property-grid-details {
@@ -2419,6 +2471,13 @@ p3 {
 	    background-image: url(/assets/lifesaver_icon);
 }
 
+.head-icon.home {
+	    background-image: url(/assets/house_icon);
+}
+
+.head-icon.message {
+	    background-image: url(/assets/message_icon);
+}
 
 .small-icon {
 	height: 26px;
@@ -2436,6 +2495,34 @@ p3 {
 
 .pull-left {
 	float: left;
+}
+
+.title-left-wrapper {
+	padding: 0px 25px 25px 25px;
+}
+
+
+.properties-container {
+	border-bottom: 1px solid rgb(224,220,220); 
+	padding: 25px;
+	cursor: pointer;
+}
+
+.properties-container.active {
+	border-left: 5px solid #00a699;
+	padding-left: 20px;
+}
+
+.properties-container:hover {
+	background-color: #f5f5f5;
+}
+
+.property-show-wrapper {
+	margin-top: 100px;
+}
+
+.property-view-box {
+	
 }
 
 

@@ -1,19 +1,23 @@
-<style>body{background-color: #f3f5f7;}</style>
+<%= render 'layouts/owner_dashboard_nav' %>
 
-<div class="col-md-12 left-nav-offset">
+<div class="row">
 
 
-<% if @rentals.present? %>
-Rented Properties
-<hr/>
-<% @rentals.each do |rental| %>
-<%= rental.address %>
-<% end %>
-<% end %>
-
+<div class="col-md-3 left-navbar">
+<%= render 'layouts/properties_nav', locals: { rental: @rental }  %>
 </div>
 
 
+<div class="col-md-7 col-md-offset-4">
+<div class="property-show-wrapper">
 
+<h1 class="dash-welcome">Hey there, <%= current_user.firstName.upcase_first %></h1>
+
+<hr/>
+
+</div>
+
+</div>
+</div>
 
 

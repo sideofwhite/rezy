@@ -1,54 +1,39 @@
-<% if applicant_signed_in? %>
-
-<div class="regular-header" style="border-bottom: 1px solid rgba(51,51,51,0.1);">
-
-<div class="logo-box">
-<div class="header_logo"></div>
-</div>
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<%= current_user.class %>
 
 
-
-
-<div class="dropdown head-drop-box">
-
-<i class="material-icons dropdown-arrow">arrow_drop_down</i>
-
+<%= link_to edit_owner_registration_path do %>
+<div class="dropdown header-box pull-right">
 <div class="avatar-nav-border">
 <div class="avatar-nav">
 <%= image_tag(current_user.avatar.url) %>
 </div>
 </div>
+<div class="head-text" style="padding-left: 0px;"><%= current_user.firstName.upcase_first %></div>
+ </div>
+<% end %>
 
- <div class="head-text" style="padding-left: 0px;"><%= current_user.firstName %></div>
+
+<%= link_to help_path do %>
+<div class="header-box pull-right">
+<div class="head-text">Help</div>
+<div class="head-icon lifesaver"></div>
+</div>
+<% end %>
+
+<%= link_to dashboard_path do %>
+<div class="header-box pull-right">
+<div class="head-text">Dashboard</div>
+<div class="head-icon home"></div>
+</div>
+<% end %>
  
-  <div class="dropdown-content">
-  	<div class="drop-item view-profile">
-  	<%= current_user.firstName %><%= current_user.lastName %>
-  	<div class="light-small">View Profile</div>
-  </div>
-   <div class="drop-item blue">
-   <%= link_to "+ New Property", new_rental_path %></div>
-   <div class="drop-item">	<%= current_user.class %></div>
-   <div class="drop-item">
-   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>
-   </div>
-
+<div class="header-box pull-right">
+<div class="head-text">Activity</div>
+<div class="head-icon message"></div>
 </div>
 
 
 
 
 
-</div>
-
-
-
-
-<% end %>
-
-
-<% if current_user.type == "Owner" %>
-<%= render 'layouts/owner_dashboard_nav' %>
-<% elsif current_user.type == "Applicant" %>
-<%= render 'layouts/applicant_dashboard_nav' %>
-<% end %>

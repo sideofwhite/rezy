@@ -1,9 +1,10 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, :except => [:create, :show, :index, :new]
   # GET /requests
   # GET /requests.json
   def index
+    @rental = Rental.find(params[:rental_id])
     @requests = Request.all
   end
 
@@ -14,6 +15,7 @@ class RequestsController < ApplicationController
 
   # GET /requests/new
   def new
+    @skip_header = true
     @rental = Rental.find(params[:rental_id])
     @request = Request.new
   end
@@ -26,12 +28,18 @@ class RequestsController < ApplicationController
   # POST /requests.json
   def create
     @rental = Rental.find(params[:rental_id])
+    if current_user.nil?
+    session[:request] = params 
+    session[:rental] = @rental.id
+    redirect_to new_applicant_registration_path
+    else
+    
     @request = @rental.requests.create(request_params)
     @request.user = current_user
 
     respond_to do |format|
       if @request.save
-        format.html { redirect_to @request, notice: 'Request was successfully created.' }
+        format.html { redirect_to rental_request_path(@rental, @request), notice: 'Request was successfully created.' }
         format.json { render :show, status: :created, location: @request }
       else
         format.html { render :new }
@@ -39,6 +47,7 @@ class RequestsController < ApplicationController
       end
     end
   end
+end
 
   # PATCH/PUT /requests/1
   # PATCH/PUT /requests/1.json

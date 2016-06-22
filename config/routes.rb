@@ -40,7 +40,7 @@ end
   get '/manage/issues', to: 'rentals#issues', as: :issues
   get '/manage/applicants', to: 'rentals#applicants', as: :applicants
   #applicants
-  get '/a/dashboard', to: 'pages#applicant_dashboard'
+  get '/a/dashboard', to: 'pages#applicant_dashboard', as: :applicant_dashboard
   #tenants
 
   #admin

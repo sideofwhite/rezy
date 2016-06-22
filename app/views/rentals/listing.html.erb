@@ -28,7 +28,7 @@
  <div class="row">
  <div class="col-md-6 col-md-offset-2">
 
-  <h1 class="listing-name"><%= @rental.feature.bed %> Bed, <%= @rental.feature.bath %> Bath House</h1>
+  <h1 class="listing-name"><%= @rental.feature.bed %> Bed, <%= @rental.feature.bath %> Bath <%= @rental.feature.property_type.upcase_first %></h1>
 
   <div>
   
@@ -42,7 +42,7 @@
    <div class="head-section-info">
     <h5 class="small-h5">Deposit</h5>
     <div class="head-section-info-text">
-      <%= @rental.feature.available %>
+      <%= @rental.feature.sq_feet %>
     </div>
   </div>
 
@@ -195,7 +195,7 @@ In most states, the law requires landlords to return any unused security deposit
 </div>
 
 <div class="col-md-2">
-  <%= link_to "Apply to view", apply_start_path, class: "apply-action" %>
+  <%= link_to "Apply to view", new_rental_request_path(@rental), class: "apply-action" %>
 </div>
 
 </div>

@@ -20,5 +20,5 @@
   <%= @request.petowner %>
 </p>
 
-<%= link_to 'Edit', edit_request_path(@request) %> |
-<%= link_to 'Back', requests_path %>
+<%= @request.user.firstName %>
+<%= @request.rental.address %>

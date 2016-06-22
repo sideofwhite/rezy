@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  before_action :authenticate_user!, :except => [:landing, :help, :terms]
+
+
   def landing
   	@bottom = true 
   	
@@ -16,7 +19,8 @@ class PagesController < ApplicationController
   end
 
   def applicant_dashboard
- 
+  
+   @apps = current_user.requests.order('created_at desc')
   end
 
 end
