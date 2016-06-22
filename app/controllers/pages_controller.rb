@@ -7,7 +7,6 @@ class PagesController < ApplicationController
   	
   end
   def dashboard
-    @dashboard = true
   	@users = User.all
     @rentals = current_user.rentals.order('created_at desc')
   end

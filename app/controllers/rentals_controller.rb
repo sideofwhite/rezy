@@ -33,7 +33,6 @@ class RentalsController < ApplicationController
   # GET /rentals/1
   # GET /rentals/1.json
   def show
-    @dashboard = true
     @rentals = current_user.rentals.order('created_at desc')
     @issues = @rental.issues.where(:open => true).order('created_at desc')
   end
