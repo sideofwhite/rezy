@@ -62,8 +62,8 @@
   </div>
 
   <div class="col-md-2 rent-box">
-  <div class="rent-box-padding">
-  <div class="rent-box-number-wrapper" style="padding: 20px 0px;">
+  <div class="rent-box-padding"  style="padding: 20px 0px;">
+  <div class="rent-box-number-wrapper">
    <span class="rent-box-number">
     <%= @rental.feature.rent %>
    
@@ -252,6 +252,29 @@ Listing not available for this property
 
 
 <script>
+$(document).ready(function() {
+ 
+  var owl = $("#owl-demo");
+ 
+  owl.owlCarousel({
+      items : 3, //10 items above 1000px browser width
+      itemsDesktop : [1000,3], //5 items between 1000px and 901px
+      itemsDesktopSmall : [900,3], // betweem 900px and 601px
+      itemsTablet: [600,2], //2 items between 600 and 0
+      itemsMobile : [400,1] // itemsMobile disabled - inherit from itemsTablet option
+  });
+ 
+  // Custom Navigation Events
+  $(".next").click(function(){
+    owl.trigger('owl.next');
+  })
+  $(".prev").click(function(){
+    owl.trigger('owl.prev');
+  })
+
+ 
+});
+
 handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
@@ -259,5 +282,7 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   handler.fitMapToBounds();
   handler.getMap().setZoom(14);
 });
+
+
 
 </script>
