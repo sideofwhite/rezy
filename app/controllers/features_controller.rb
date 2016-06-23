@@ -4,31 +4,31 @@ class FeaturesController < ApplicationController
   # GET /features
   # GET /features.json
   def index
-    @rental = Rental.find(params[:rental_id])
+    @rental = Rental.friendly.find(params[:rental_id])
     @features = Feature.all
   end
 
   # GET /features/1
   # GET /features/1.json
   def show
-     @rental = Rental.find(params[:rental_id])
+     @rental = Rental.friendly.find(params[:rental_id])
   end
 
   # GET /features/new
   def new
-    @rental = Rental.find(params[:rental_id])
+    @rental = Rental.friendly.find(params[:rental_id])
     @feature = Feature.new
   end
 
   # GET /features/1/edit
   def edit
-   @rental = Rental.find(params[:rental_id])
+   @rental = Rental.friendly.find(params[:rental_id])
   end
 
   # POST /features
   # POST /features.json
   def create
-    @rental = Rental.find(params[:rental_id])
+    @rental = Rental.friendly.find(params[:rental_id])
     @feature = @rental.create_feature(feature_params)
 
     respond_to do |format|
@@ -45,7 +45,7 @@ class FeaturesController < ApplicationController
   # PATCH/PUT /features/1
   # PATCH/PUT /features/1.json
   def update
-     @rental = Rental.find(params[:rental_id])
+     @rental = Rental.friendly.find(params[:rental_id])
    
 
     respond_to do |format|

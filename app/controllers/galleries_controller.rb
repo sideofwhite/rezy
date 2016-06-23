@@ -10,24 +10,24 @@ class GalleriesController < ApplicationController
   # GET /galleries/1
   # GET /galleries/1.json
   def show
-    @rental = Rental.find(params[:rental_id])
+    @rental = Rental.friendly.find(params[:rental_id])
   end
 
   # GET /galleries/new
   def new
-    @rental = Rental.find(params[:rental_id])
+    @rental = Rental.friendly.find(params[:rental_id])
     @gallery = Gallery.new
   end
 
   # GET /galleries/1/edit
   def edit
-  @rental = Rental.find(params[:rental_id])
+  @rental = Rental.friendly.find(params[:rental_id])
   end
 
   # POST /galleries
   # POST /galleries.json
   def create
-    @rental = Rental.find(params[:rental_id])
+    @rental = Rental.friendly.find(params[:rental_id])
     @gallery = @rental.galleries.create(gallery_params)
 
     respond_to do |format|
@@ -44,7 +44,7 @@ class GalleriesController < ApplicationController
   # PATCH/PUT /galleries/1
   # PATCH/PUT /galleries/1.json
   def update
-    @rental = Rental.find(params[:rental_id])
+    @rental = Rental.friendly.find(params[:rental_id])
     respond_to do |format|
       if @gallery.update(gallery_params)
         format.html { redirect_to @gallery, notice: 'Gallery was successfully updated.' }
