@@ -1,4 +1,4 @@
-<%= render 'layouts/light_header' %>
+<style>body{background-color: #f5f5f5;}</style>
 
 
 <div class="sign-modal">
@@ -18,13 +18,13 @@ Sign in
     <%= f.input :password, input_html: { :class => "start-form"}, placeholder: 'Password', label: false %>
     </div>
    <div class="btn-input">
-    <%= f.submit "Sign in", class: "btn square-btn" %>
+    <%= f.submit "Sign in", disabled: true, class: "btn square-btn" %>
   </div>
 <% end %>
 
-<%= link_to "Forgot password?", '/owners/get-started', class: "get-started-close" %>
+
 <div class="row"></div>
-<p3> Don't have a Rezy account? <%= link_to "Sign up today.", '/owners/get-started', class: "get-started-close" %> </p3>
+<p3> Don't have a Rezy account? <%= link_to "Sign up for free.", '/owners/get-started', class: "get-started-close" %> </p3>
 
 
 

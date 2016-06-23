@@ -6,6 +6,7 @@ class RentalsController < ApplicationController
   @skip_header = true
   @rental = Rental.friendly.find(params[:id])
   @gallery_images = @rental.galleries.order('created_at')
+  @interested_sample = @rental.requests.limit(1).order('created_at desc')
   @hash = Gmaps4rails.build_markers(@rental) do |rental, marker|
    marker.lat rental.latitude
    marker.lng rental.longitude

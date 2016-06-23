@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620155409) do
+ActiveRecord::Schema.define(version: 20160623002041) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160620155409) do
     t.integer  "sq_feet"
     t.string   "property_type"
     t.boolean  "furnished"
+    t.integer  "deposit"
     t.index ["rental_id"], name: "index_features_on_rental_id"
   end
 

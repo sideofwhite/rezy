@@ -1,9 +1,11 @@
+<% if @rental.feature.present? %>
+
 <script src="//maps.google.com/maps/api/js?v=3.23&key=AIzaSyDxskzFu6_jYdQh8LYUNB0F3nLSjtaB3HI"></script>
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 
 
 
-<div class="header_logo large-abs"></div>
+<div class="header_logo large-abs white_logo"></div>
 
 <div class="listing-wrapper">
 
@@ -28,7 +30,7 @@
  <div class="row">
  <div class="col-md-6 col-md-offset-2">
 
-  <h1 class="listing-name"><%= @rental.feature.bed %> Bed, <%= @rental.feature.bath %> Bath <%= @rental.feature.property_type.upcase_first %></h1>
+  <h1 class="listing-name"><%= @rental.feature.bed %> Bed, <%= @rental.feature.bath %> Bath <%= @rental.feature.property_type.upcase_first %><div class="new-badge">New Listing</div></h1>
 
   <div>
   
@@ -39,19 +41,22 @@
    </div>
   </div>
 
+   <% if @rental.feature.year_lease? %>
    <div class="head-section-info">
-    <h5 class="small-h5">Deposit</h5>
+    <h5 class="small-h5">Lease Terms</h5>
+    <div class="head-section-info-text">Yearly</div>
+   </div>
+   <% else %>
+   Contact
+  <% end %>
+
+   <div class="head-section-info"  style="border: 0;">
+    <h5 class="small-h5">Square Feet</h5>
     <div class="head-section-info-text">
       <%= @rental.feature.sq_feet %>
     </div>
   </div>
 
-   <% if @rental.feature.year_lease? %>
-   <div class="head-section-info" style="border: 0;">
-    <h5 class="small-h5">Lease Terms</h5>
-    <div class="head-section-info-text">Yearly</div>
-   </div>
-  <% end %>
 
   </div>
   </div>
@@ -65,6 +70,7 @@
    <span class="monthly-rent">/mo</span>
    </span>
    </div>
+   <div class="deposit">+ $<%= @rental.feature.deposit %> Deposit </div>
   </div>
   </div>
 
@@ -120,6 +126,18 @@
 
 </div>
 
+<hr/>
+
+<div class="section-header">Bonus Features</div>
+
+<div class="row">
+
+<%= render 'bonus_feature_list', locals: { rental: @rental } %>
+
+
+
+</div>
+
 <div class="title-box" style="margin-top: 60px; margin-bottom: -34px;">
 Location
 </div>
@@ -129,7 +147,29 @@ Location
 <div class="col-md-2 col-md-offset-1">
  <div class="sidebar-box">
  	<div class="rent-box-padding">
- 		<%= @rental.requests.count %> people are interested 
+  
+    <div class="center-avatars">
+    <div class="avatar-nav-border overlapping">
+     <div class="avatar-nav">
+    <%= image_tag("/assets/user_avatar_large") %>
+     </div>
+    </div>
+    <div class="avatar-nav-border overlapping">
+     <div class="avatar-nav">
+    <%= image_tag("/assets/user_avatar_large") %>
+     </div>
+    </div>
+    <div class="avatar-nav-border overlapping">
+     <div class="avatar-nav">
+    <%= image_tag("/assets/user_avatar_large") %>
+     </div>
+    </div>
+   </div>
+
+    
+     <p class="feature-text" style="line-height: 1.4; color: #484848; margin-top: 10px; margin-bottom: 5px; text-align: center; display: block;">5 other people are interested </p>
+   <p class="feature-text" style="text-align: center; display: block; line-height: 1.4; ">Apply now,
+because it won't last long.</p>
     </div>
  </div>
 </div>
@@ -190,7 +230,7 @@ In most states, the law requires landlords to return any unused security deposit
 <div class="row">
  <div class="col-md-6 col-md-offset-2">
   <div class="apply-encourage">
-  Interested in seeing this property?
+  Interested in living here? 
   </div>
 </div>
 
@@ -203,6 +243,12 @@ In most states, the law requires landlords to return any unused security deposit
 </div>
 
 </div>
+
+<% else %>
+
+Listing not available for this property
+
+<% end %>
 
 
 <script>

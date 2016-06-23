@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
 
   def landing
+    @skip_header = true
   	@bottom = true 
   	
   end

@@ -1,3 +1,12 @@
+  <% if @rental.feature.furnished? %> 
+  <div class="col-md-4 feature-margin">
+  <div>
+  <div class="feature-icon furnished"></div><div class="feature-text">Furnished</div>
+  </div>
+  </div>
+  <% end %>
+
+
  <% if @rental.feature.air? %> 
   <div class="col-md-4 feature-margin">
   <div>
@@ -26,7 +35,7 @@
    <% if @rental.feature.washer_dryer? %> 
   <div class="col-md-4 feature-margin">
   <div>
-  <div class="feature-icon washer"></div><div class="feature-text">Washer/Dryer</div>
+  <div class="feature-icon washer_dryer"></div><div class="feature-text">Washer/Dryer</div>
   </div>
   </div>
   <% end %>
@@ -34,7 +43,7 @@
   <% if @rental.feature.deck? %> 
   <div class="col-md-4 feature-margin">
   <div>
-  <div class="feature-icon dishwasher"></div><div class="feature-text">Deck/Patio</div>
+  <div class="feature-icon patio"></div><div class="feature-text">Deck/Patio</div>
   </div>
   </div>
   <% end %>
