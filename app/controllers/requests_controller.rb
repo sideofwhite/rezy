@@ -4,7 +4,7 @@ class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
   def index
-    @rental = Rental.find(params[:rental_id])
+    @rental = Rental.friendly.find(params[:rental_id])
     @requests = Request.all
   end
 
@@ -16,7 +16,7 @@ class RequestsController < ApplicationController
   # GET /requests/new
   def new
     @skip_header = true
-    @rental = Rental.find(params[:rental_id])
+    @rental = Rental.friendly.find(params[:rental_id])
     @request = Request.new
   end
 
@@ -27,7 +27,7 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.json
   def create
-    @rental = Rental.find(params[:rental_id])
+    @rental = Rental.friendly.find(params[:rental_id])
     if current_user.nil?
     session[:request] = params 
     session[:rental] = @rental.id

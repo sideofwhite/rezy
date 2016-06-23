@@ -14,7 +14,7 @@
 
 <div id="owl-demo" class="owl-carousel owl-theme">
 <% @gallery_images.each do |gallery| %>
-<div class="carousel-image item" style="background-image: url(<%= gallery.image %>);"> </div>
+<div class="carousel-image item" style="background-image: url(<%= gallery.image.url %>);"> </div>
 <% end %>
 
   
@@ -63,7 +63,7 @@
 
   <div class="col-md-2 rent-box">
   <div class="rent-box-padding">
-  <div class="rent-box-number-wrapper">
+  <div class="rent-box-number-wrapper" style="padding: 20px 0px;">
    <span class="rent-box-number">
     <%= @rental.feature.rent %>
    
