@@ -1,0 +1,21 @@
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+ 
+ 
+
+
+ <div class="avatar-full">
+<%= image_tag(current_user.avatar.url) %>
+</div>
+
+
+
+<div class="addimage">
+<%= f.input :avatar, input_html: { :style => "opacity:0;"  }, label: false %>
+</div>
+
+
+  <div class="btn-input">
+    <%= f.submit "Update", class: "btn-green" %>
+  </div>
+<% end %>

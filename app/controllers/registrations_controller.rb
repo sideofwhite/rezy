@@ -6,6 +6,18 @@ def new
   super
 end
 
+def info
+  if current_user.type == "Owner"
+  @owner = current_user
+  end
+
+  if @owner
+    render :complete_profile
+  else
+    redirect_to root_path
+  end 
+end
+
 def complete_profile
 
   
@@ -65,7 +77,7 @@ protected
       end
   end
   if resource.type == "Owner"
-  '/dashboard'
+  '/completer0'
   elsif resource.type == "Tenant"
   '/t/dashboard'
   elsif resource.type == "Admin"
@@ -77,7 +89,7 @@ protected
     resource.update_without_password(params)
   end
 
- 
+
 
    
 

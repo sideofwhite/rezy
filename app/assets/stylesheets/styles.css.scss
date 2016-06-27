@@ -1,5 +1,5 @@
 body {
-    font-family: 'usual', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin: 0px;
 	    color: #484848;
 	-webkit-font-smoothing: antialiased;
@@ -18,12 +18,12 @@ p {
 
 p.banner-land {
 
-	font-size: 26px;
+	font-size: 22px;
 	margin: 0 auto;
 	line-height: 1.3;
 	margin-top: 15px;
-	text-align: center;
-	color: #fff;
+
+	
 }
 
 p.title {
@@ -65,12 +65,12 @@ h1 {
 }
 
 h1.banner-land {
-	text-align: center;
+	
 	margin: 0px;
-	line-height: 1.1;
-	color: #fff;
-	font-weight: 700;
+	line-height: 0.95;
+    font-weight: 700;
 	font-size: 70px;
+	margin-top: 200px;
 
 }
 
@@ -1714,7 +1714,7 @@ h3 {
 }
 
 .landing-banner {
-	    background-image: url(https://cozy.co/img/hero/hero-home.jpg);
+	    background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)), url(https://imgdrop.imgix.net/344f5a9136ca421da0f64fd67c88b3e0.jpg?w=1920);
     background-color: #fff;
     background-position: right bottom;
     background-repeat: no-repeat;
@@ -1822,8 +1822,8 @@ ul
 
 .header_logo {
 	    display: inline-block;
-    width: 50px;
-    height: 42px;
+    width: 55px;
+    height: 46px;
     background-size: contain;
     background-image: url(/assets/logo_yellow);
     background-repeat: no-repeat;
@@ -1834,7 +1834,7 @@ ul
 }
 
 .header_logo.white_logo {
-	background-image: url(https://s31.postimg.org/g4az12wjv/logo_white.png);
+	background-image: url(/assets/logo_white);
 }
 
 .header_logo.large-abs {
@@ -2630,6 +2630,38 @@ p3 {
 }
 
 
+.landing-body {
+	text-rendering: optimizeLegibility;
+    color: #595959;
+    letter-spacing: -0.005em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 500px) {
     body {
     font-size: 14px;
@@ -2650,5 +2682,4 @@ p3 {
     .header-logo {position: absolute; left: 50%;}
     
 }
-
 

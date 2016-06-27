@@ -22,11 +22,12 @@ Rails.application.routes.draw do
 
   devise_scope :applicant do
   get "apply/get-started" => "registrations#new", as: :apply_start
-  get "/complete-profile" => "registrations#complete_profile"
 end
 
  devise_scope :owner do
  get "/owners/get-started" => "registrations#new"
+ get "/owners/info" => "registrations#edit", as: :owner_info, :onboard => "true"
+ get "/complete-profile" => "registrations#complete_profile"
  end
 
  devise_scope :user do 
