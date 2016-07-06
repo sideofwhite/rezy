@@ -1937,14 +1937,14 @@ ul
     width: 40px;
     height: 40px;
     background-size: contain;
-    background-image: url(/assets/logo_dark_blue);
+    background-image: url(https://s3-us-west-2.amazonaws.com/rezy/static/logo_dark_blue.png);
     background-repeat: no-repeat;
     float: left;
    
 }
 
 .header_logo.footer_logo {
-	background-image: url(/assets/logo_grey);
+	background-image: url(https://s3-us-west-2.amazonaws.com/rezy/static/logo_grey.png);
 	width: 30px;
 	height: 30px;
 	float: none;
@@ -1952,7 +1952,7 @@ ul
 }
 
 .header_logo.white_logo {
-	background-image: url(/assets/logo_white);
+	background-image: url(https://s3-us-west-2.amazonaws.com/rezy/static/logo_white.png);
 }
 
 .header_logo.large-abs {
@@ -1961,11 +1961,11 @@ ul
 	top: 20px; 
 	left: 50%;
 	margin-left: -20px;
-    background-image: url(/assets/logo_white);
+    background-image: url(https://s3-us-west-2.amazonaws.com/rezy/static/logo_white.png);
 }
 
 .header_logo.grey_logo {
-	background-image: url(http://i.imgur.com/Wb7kPio.png);
+	
 
 }
 
@@ -2775,7 +2775,7 @@ p3 {
 	font-size: 14px;
 	text-align: center;
 	color: #757575;
-	background: #f5f5f5;
+	background: #fafafa;
 }
 
 
@@ -2793,7 +2793,7 @@ p3 {
 
 .angled-back {
 	background-color: #fafafa;
-	padding-bottom: 13%;
+	padding-bottom: 80px;
 }
 
 	.angled-back:before {
@@ -2805,7 +2805,7 @@ p3 {
     background-repeat: no-repeat;
     padding-top: 13%;
 
-    background-image: url("/assets/shape-triangle");
+    background-image: url("https://s3-us-west-2.amazonaws.com/rezy/static/shape-triangle.svg");
 }
 
 .ipad-screenshot {
@@ -2829,7 +2829,7 @@ p3 {
 }
 
 .landing-form-info {
-	font-size: 16px;
+	font-size: 20px;
 	line-height: 1.4;
 	text-align: center;
 	width: 80%;
@@ -2884,6 +2884,16 @@ p3 {
 }
 
 
+.highlight {
+	color: #2ba8de;
+	font-size: 20px;
+}
+
+.sell-blocks {
+	padding: 0px 40px;
+}
+
+
 
 @media only screen and (max-width: 500px) {
     body {
@@ -2902,15 +2912,23 @@ p3 {
     .regular-header {border: none; box-shadow: none;}
     .hide-mobile {display: none;}
     .logo-box {border: none;}
-    .header-logo {position: absolute; left: 50%;}
     .container {width: 90%;}
     h1.blue-label.banner-title {
-    font-size: 34px;
+    font-size: 30px;
     }
     .sign-modal {
     width: 70%;
     padding: 25px;
     }
+    h2 {
+    font-size: 26px;
+    }
+    .icon-land-block p {
+    margin-bottom: 20px;
+    }
+    .header_logo {margin-top: 18px;}
+    .landing-form-info {font-size: 16px;}
+
     
 }
 

@@ -1,16 +1,26 @@
-<h2>Forgot your password?</h2>
+<div class="login-back">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+<div class="header_logo large-abs"></div>
+
+<div class="sign-modal">
+
+<div class="sign-text text-center">
+Reset password
+</div>  
+
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+  <div class="start-input-container">
+    <%= f.input :email, input_html: { :class => "white-input"}, placeholder: 'Email', label: false %>
+    </div>
 
   <div class="actions">
-    <%= f.submit "Reset password" %>
+    <%= f.submit "Reset", disabled: true, class: "btn blue", style: "margin-top: 30px;"  %>
   </div>
 <% end %>
 
 
+</div>
+</div>
