@@ -30,7 +30,5 @@
 
 <%= @rental.requests.count %>
 <% @rental.requests.each do |request| %>
-<% unless request.user.present? %>
-hello
-<% end %>
+
 <% end %>

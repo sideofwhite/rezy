@@ -1,0 +1,10 @@
+<%= simple_form_for(@rental) do |f| %>
+
+<%= f.input :addressSecondary, :input_html => { :class => "input-form" } %>
+
+<div class="btn-input">
+    <%= f.submit "Submit", class: "btn-green" %>
+  </div>
+
+
+<% end %>

@@ -1,0 +1,12 @@
+<div class="col-md-4 col-md-offset-4">
+    <% @contacts.each do |contact| %>
+
+        <%= contact.firstName %>
+        <%= contact.lastName %>
+        <br>
+        <%= contact.email %>
+  <hr/>
+    <% end %>
+
+
+</div>

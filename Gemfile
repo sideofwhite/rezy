@@ -38,6 +38,8 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'friendly_id'
 gem 'aws-sdk', '~> 2.3'
+gem 'beanstream'
+gem 'jquery-form-validator-rails'
 
 group :production do
 gem 'pg'

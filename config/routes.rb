@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   
   
+  resources :contacts
   resources :rentals do
   	resources :issues
   	resources :requests
@@ -40,6 +41,8 @@ end
   get '/dashboard/rentals', to: 'rentals#index'
   get '/manage/issues', to: 'rentals#issues', as: :issues
   get '/manage/applicants', to: 'rentals#applicants', as: :applicants
+  get '/rentals/:id/add-unit', to: 'rentals#add_unit', as: :add_unit
+  get '/owners/hey-hi-hello', to: 'pages#hello', as: :hello
   #applicants
   get '/a/dashboard', to: 'pages#applicant_dashboard', as: :applicant_dashboard
   #tenants
@@ -51,6 +54,8 @@ end
   #misc
   get '/terms', to: 'pages#terms'
   get '/help', to: 'pages#help'
+
+
   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

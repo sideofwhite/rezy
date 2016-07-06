@@ -20,6 +20,10 @@ class RentalsController < ApplicationController
      @dashboard = true
   end
 
+  def add_unit
+     @rental = Rental.friendly.find(params[:id])
+  end
+
   def applicants
     @dashboard = true
   end
@@ -42,6 +46,7 @@ class RentalsController < ApplicationController
 
   # GET /rentals/new
   def new
+    @skip_header = true
     @bottom = true 
     @rental = Rental.new
   end
@@ -57,7 +62,7 @@ class RentalsController < ApplicationController
 
     respond_to do |format|
       if @rental.save
-        format.html { redirect_to @rental, notice: 'Rental was successfully created.' }
+        format.html { redirect_to add_unit_path(@rental), notice: 'Rental was successfully created.' }
         format.json { render :show, status: :created, location: @rental }
       else
         format.html { render :new }
@@ -98,6 +103,6 @@ class RentalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rental_params
-      params.require(:rental).permit(:address, :addressSecondary, :city, :postal, :province, :user_id, :image)
+      params.require(:rental).permit(:address, :addressSecondary, :city, :postal, :province, :user_id, :image, :street, :street_number)
     end
 end

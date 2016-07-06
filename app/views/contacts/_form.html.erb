@@ -1,0 +1,41 @@
+
+<%= simple_form_for(@contact) do |f| %>
+  <%= f.error_notification %>
+
+
+    <div class="start-input-container full-name top-left" style="margin-bottom: 2%;">
+  <%= f.text_field(:firstName, class: "white-input", placeholder: 'First Name', label: false, data: {
+      :validation => "required validate_max_length length50",
+      "validation-error-msg" => ' '
+    }) %>
+
+   </div>
+   <div class="start-input-container full-name" style="margin-bottom: 2%;">
+     <%= f.text_field(:lastName, class: "white-input", placeholder: 'First Name', label: false, data: {
+      :validation => "required validate_max_length length50",
+      "validation-error-msg" => ' '
+    }) %>
+   </div>
+   <div class="start-input-container">
+    <%= f.text_field(:email, class: "white-input", placeholder: 'Email', label: false, data: {
+      :validation => "email", 
+      "validation-error-msg" => ' ', 
+    })  %>
+   </div>
+
+
+  <div class="form-actions">
+    <%= f.submit "get started", class: 'btn blue' %>
+  </div>
+
+<% end %>
+
+
+<script>
+  $(document).ready(function() {
+    $.validate({
+  borderColorOnError : '#f8bf4e'
+  
+});
+  });
+</script>

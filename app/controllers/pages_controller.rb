@@ -1,12 +1,13 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, :except => [:landing, :help, :terms]
+  before_action :authenticate_user!, :except => [:landing, :help, :terms, :hello]
 
 
   def landing
-    @skip_header = true
+    
   	@bottom = true 
-  	
+    @contact = Contact.new
   end
+
   def dashboard
   	@users = User.all
     @rentals = current_user.rentals.order('created_at desc')
@@ -14,8 +15,19 @@ class PagesController < ApplicationController
   def help
   	@bottom = true 
   end
+
+
   def terms 
   	@skip_header = true
+  
+
+
+  end
+
+
+
+  def hello
+  @skip_header = true
   end
 
   def applicant_dashboard
