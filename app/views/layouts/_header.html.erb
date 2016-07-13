@@ -31,16 +31,25 @@
 
 
 
+<%= link_to resources_path do %>
+<div class="header-buttons">
+Landlord Resources
+</div>
+<% end %>
 
+<a href="mailto:admin@rezy.ca?Subject=Hello" target="_top" class="header-buttons hide-mobile">Contact</a>
 
+<%= link_to pricing_path do %>
+<div class="header-buttons">
+Pricing
+</div>
+<% end %>
 
-<a href="mailto:hello@rezy.ca?Subject=Hello" target="_top" class="header-buttons hide-mobile">Contact</a>
+<%= link_to 'Sign in', login_path, class: "header-buttons" %>
 
-
-
-<%= link_to login_path do %>
+<%= link_to new_contact_path do %>
 <div class="btn add-property">
-Sign in
+Get started
 </div>
 <% end %>
 

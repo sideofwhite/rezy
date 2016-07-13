@@ -1,5 +1,5 @@
 body {
-    font-family: "Gotham SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
 	margin: 0px;
 	    color: #484848;
 	-webkit-font-smoothing: antialiased;
@@ -15,7 +15,7 @@ body {
 
 p {
 	line-height: 1.6;
-	font-size: 16px;
+	font-size: 18px;
 	margin: 0px;
 	color: #757575;
 }
@@ -32,6 +32,10 @@ p.banner-land {
 	
 }
 
+p.list {
+	margin-top: 20px;
+}
+
 p.title {
 	margin: 0px 0px 10px 0px;
 	font-size: 22px;
@@ -41,7 +45,7 @@ p.title {
 
 p.description {
 	line-height: 1.6;
-	font-size: 16px;
+	font-size: 18px;
 	margin: 0px;
 	color: #757575;
 }
@@ -81,13 +85,38 @@ h1.banner-land {
 
 }
 
+h1.bitter {
+	font-family: 'Bitter', serif;
+	font-size: 44px;
+	color: #fff;
+	font-weight: 700;
+	line-height: 1.2;
+	margin-top: 0px;
+}
+
+h1.bitter-sub {
+	font-family: 'Bitter', serif;
+	font-size: 34px;
+	font-weight: 400;
+	line-height: 1.2;
+	position: relative;
+}
+
+h1.bitter-sub:after {
+	    content: "";
+    display: block;
+    position: absolute;
+    margin-top: 10px;
+    width: 30px;
+    border-top: 3px solid #ef073f;
+}
+
 h1.blue-label {
 	background-color: #2ba8de;
 	font-size: 36px;
 	color: #fff;
 	display: inline-block;
 	padding: 10px;
-	font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, Arial, sans-serif;
 	font-weight: 500;
 	letter-spacing: -0.06em;
 	margin: 0px;
@@ -131,7 +160,7 @@ p2 {
 }
 
 h4 {
-	font: 400 24px/1.45 'Whitney SSm A', 'Whitney SSm B', sans-serif;
+	
     letter-spacing: -0.03em;
     -webkit-font-smoothing: antialiased;
     margin: 0px;
@@ -147,7 +176,7 @@ h5 {
 }
 
 h2 {
-	font: 300 34px/1.45 'Whitney SSm A', 'Whitney SSm B', sans-serif;
+	
     letter-spacing: -0.04em;
     -webkit-font-smoothing: antialiased;
     margin: 0px;
@@ -175,14 +204,18 @@ h5.small-h5 {
 
 .icon-land-block h4 {
 	margin-bottom: 10px;
-	font-size: 24px;
-	font-weight: 500;
+	font-size: 22px;
+	font-weight: 600;
+	text-align: left;
 }
 
 .icon-land-block p {
 	font-size: 16px;
-	line-height: 1.5;
+	line-height: 1.55;
+	overflow: hidden;
+	text-align: left;
 }
+
 
 h5.large-h5 {
 	margin-bottom: 10px;
@@ -266,14 +299,14 @@ a:-webkit-any-link {
 
 .white-input {
 	border: 1px solid #dedede;
-    padding: 18px;
+    padding: 14px;
 	color: #565a5c;
 	border: 1px solid #dce0e0;
 	font-size: 16px;
 	width: 100%;
 	box-sizing: border-box;
 	border-radius: 2px;
-	font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif !important;
+	font-family: "Lato", Helvetica, Arial, sans-serif !important;
 	font-weight: 500;
 
 }
@@ -286,7 +319,7 @@ a:-webkit-any-link {
 	width: 100%;
 	box-sizing: border-box;
 	border-radius: 6px;
-	font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif !important;
+	font-family: "Lato", Helvetica, Arial, sans-serif !important;
 }
 
 .sign-form {
@@ -297,7 +330,7 @@ a:-webkit-any-link {
 	width: 100%;
 	box-sizing: border-box;
 	border-radius: 6px;
-	font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif !important;
+	font-family: "Lato", Helvetica, Arial, sans-serif !important;
 }
 
 .start-form {
@@ -308,7 +341,7 @@ a:-webkit-any-link {
 	font-size: 20px !important;
 	width: 100%;
 	box-sizing: border-box;
-	font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif !important;
+	font-family: "Lato", Helvetica, Arial, sans-serif !important;
 	background-color: rgba(0,0,0,0);
 }
 
@@ -488,7 +521,7 @@ a:-webkit-any-link {
 
 .footer {
     padding: 20px 0px;
-	
+	background-color: #303030;
 	
 	
 	
@@ -540,7 +573,7 @@ a:-webkit-any-link {
 
 
 h3 {
-	font: 400 20px/1.45 'Whitney SSm A', 'Whitney SSm B', sans-serif;
+	
     letter-spacing: -0.03em;
     -webkit-font-smoothing: antialiased;
     margin: 0px;
@@ -563,7 +596,7 @@ h3 {
 .btn {
 	
     
-    font-weight: 600;
+    font-weight: 800;
     margin: 20px 0px 20px 0px;
     background-color: rgba(0,0,0,0);
 	padding: 0px 25px;
@@ -572,7 +605,7 @@ h3 {
     cursor: pointer;
     font-size: 14px;
     text-align: center;
-    font-family: "Gotham SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
     
     
 }
@@ -675,50 +708,77 @@ h3 {
 }
 
 .btn.blue {
-	background-color: #3dc198;
+	background-color: #ef073f;
 	border-radius: 3px;
-	color: #fff;
 	letter-spacing: 0.115em;
 	text-transform: uppercase;
-	font-size: 13px;
-	height: 50px;
-	line-height: 51px;
+	font-size: 12px;
+	height: 44px;
+	line-height: 45px;
 	display: block;
 	margin: 0 auto;
 	padding: 0px 35px;
+	border-radius: 50px;
+	color: #fff;
+
 
 }
 
-.btn.add-property {
+.btn.grey {
+	background-color: #fff;
+	border-radius: 3px;
+	letter-spacing: 0.115em;
+	text-transform: uppercase;
+	font-size: 12px;
+	height: 44px;
+	line-height: 45px;
+	display: block;
+	margin: 0 auto;
+	padding: 0px 35px;
+	border-radius: 50px;
+	color: #757575;
 	border: 1px solid #dedede;
-	border-radius: 2px;
-	height: 36px;
-	line-height: 36px;
-	padding: 0px 25px;
-	text-transform: none;
-	font-size: 11px;
-	font-weight: 700 ;
-	position: relative;
-	display: inline-block;
-	    letter-spacing: 1px;
-	    text-transform: uppercase;
-	    margin-left: 15px;
+}
+
+.btn.add-property {
+	    -webkit-transition: all 125ms ease-in-out;
+    transition: all 125ms ease-in-out;
+    border-radius: 22px;
+    background: #ef073f;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 800;
+    letter-spacing: 0.115em;
+    padding: 0px 35px;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 11px;
+    height: 38px;
+    line-height: 38px;
+    margin-left: 15px;
 
 	
 }
 
 .header-buttons {
-	font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+	
     font-size: 11px;
     letter-spacing: 1px;
     text-transform: uppercase;
     box-shadow: 0 0 0 0 #dedede;
     padding: 0 5px 6px 5px;
-    margin: 0 15px;
-    font-weight: 500;
+    margin: 0 10px;
+    font-weight: 600;
     display: inline-block;
     text-align: right;
     position: relative;
+    color: #828282;
+    cursor: pointer;
+}
+
+.header-buttons:hover {
+	color: #484848;
 }
 
 .btn-green.small:hover {
@@ -1378,8 +1438,17 @@ margin-bottom: 5px;
    }
 
    .border-bottom {
-   padding: 25px 0px;
+   padding: 20px 0px;
    border-bottom: 1px solid #dedede;
+   }
+
+   .border-bottom.blue-fill {
+   background-color: #1e5281;
+   border: 0px;
+   color: #fff;
+   height: 50px;
+   line-height: 50px;
+   padding: 0px;
    }
 
    .blue-back {
@@ -1827,12 +1896,13 @@ margin-bottom: 5px;
 
 
 .landing-banner {
-	   padding-top: 4rem; padding-bottom: 4rem;
+	   padding-top: 5rem; padding-bottom: 5rem;
     
     position: relative;
-    background: url(https://www.shyp.com/images/pricing/hero.jpg) left / auto 100% no-repeat;
+    background: url(https://assets.gusto.com/assets/corporate/main/backgrounds/bg-signup-company-21df4d50c20ab4b7aeb156a1bbe42bfb056a260289bceacef07ee98738faf025.jpg);
     background-size: cover;
-    
+    background-repeat: no-repeat;
+    background-position: top top;
 }
 
 
@@ -1934,8 +2004,8 @@ ul
 
 .header_logo {
 	    display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     background-size: contain;
     background-image: url(https://s3-us-west-2.amazonaws.com/rezy/static/logo_dark_blue.png);
     background-repeat: no-repeat;
@@ -2039,15 +2109,38 @@ position: relative; top: 0; right: 0; left: 0; z-index: 100;
 .tenants-back {
 
 
-	background-image: url(/assets/person);
+	
 
 	background-repeat: no-repeat;
 	 background-position: left bottom;
-	 	background-color: #f5f5f5;
+	 	
 	position: relative;
-  height: 430px;
+  
   text-align: center;
 
+}
+
+.section-container {
+	height: 480px;
+}
+
+.tenants-back.contractor {
+	background-image: url(https://s3-us-west-2.amazonaws.com/rezy/static/contractor.png);
+	background-color: #f8f8f8;
+	height: 480px;
+	
+}
+.tenants-back.rent-laptop {
+	background-image: url(https://s3-us-west-2.amazonaws.com/rezy/static/computer-rent.png);
+	background-size: 450px 300px;
+	height: 300px;
+}
+.tenants-back.tenant {
+	background-image: url(https://assets.gusto.com/assets/corporate/main/backgrounds/benefits/bg-video-benefits-overview-d32f780fcdfffe300eda69de832d9072f9d469533eb66d2baaabf78d423a7f08.jpg);
+	background-size: 350px;
+	background-position: center;
+	height: 300px;
+	
 }
 
 .half-back {
@@ -2634,26 +2727,29 @@ p3 {
 
 .explain-icon {
 	background-repeat: no-repeat;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     display: inline-block;
     position: relative;
  
     background-color: transparent;
     background-repeat: no-repeat;
-    margin: 0 auto;
+    background-position: center top;
+ 
+    float: left; 
+    margin-right: 20px;
     
     
 }
 
-.explain-icon.message-draw {
-	background-image: url(/assets/message_draw);
+.explain-icon.transparent {
+	background-image: url(https://assets.gusto.com/assets/corporate/main/icons/berry/icon-support-berry-5d17606272a19476aa33309b5addefb38daa2c812570aff002960d165fb58f94.png);
 }
-.explain-icon.money-draw {
-	background-image: url(/assets/money_draw);
+.explain-icon.full-service {
+	background-image: url(https://assets.gusto.com/assets/corporate/main/icons/berry/icon-imac-berry-de75cd78626c485d5199e1793ba958f6553efa1680fff2780571126d7c450da4.png);
 }
-.explain-icon.home-draw {
-	background-image: url(/assets/home_draw);
+.explain-icon.best-value {
+	background-image: url(https://assets.gusto.com/assets/corporate/main/icons/berry/icon-payday-berry-649cd4f7ae67aaaf43cde136bc45ed8cfec536616f698e7a5ce96d9180109fc9.png);
 }
 .explain-icon.repair-icon {
 	background-image: url(/assets/icon_repair);
@@ -2786,14 +2882,14 @@ p3 {
 }
 
 .dark-grey {
-	color: #70828f;
+	
 }
 
 
 
 .angled-back {
-	background-color: #fafafa;
-	padding-bottom: 80px;
+	background-color: #f8f8f8;
+	padding-bottom: 60px;
 }
 
 	.angled-back:before {
@@ -2829,13 +2925,12 @@ p3 {
 }
 
 .landing-form-info {
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 1.4;
-	text-align: center;
-	width: 80%;
-	margin: 0 auto;
+	color: #fff;
 	margin-bottom: 25px;
 	font-weight: 500;
+	text-align: center;
 }
 
 
@@ -2867,7 +2962,7 @@ p3 {
 
 
 .login-back {
-	background-image: url(https://cozy.co/img/hero/hero-pricing.jpg); 
+	background-image: url(https://d27ow4o8qz62h7.cloudfront.net/investorportal-ui/assets/images/embrace-bg.png); 
 	background-repeat: no-repeat; 
 	background-size: cover;
 	position: absolute;
@@ -2885,12 +2980,21 @@ p3 {
 
 
 .highlight {
-	color: #2ba8de;
-	font-size: 20px;
+	color: #1e5281;
+	font-size: 24px;
+	font-weight: 600;
 }
 
 .sell-blocks {
 	padding: 0px 40px;
+}
+
+.form-card {
+	margin-top: -13em;
+	border: 1px solid #dedede;
+	border-radius: 2px;
+	padding: 20px;
+	background: #fff;
 }
 
 
@@ -2923,7 +3027,7 @@ p3 {
     h2 {
     font-size: 26px;
     }
-    .icon-land-block p {
+    .icon-land-block p   {
     margin-bottom: 20px;
     }
     .header_logo {margin-top: 18px;}

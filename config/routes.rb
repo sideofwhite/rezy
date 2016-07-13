@@ -54,8 +54,8 @@ end
   #misc
   get '/terms', to: 'pages#terms'
   get '/help', to: 'pages#help'
-
-
+  get '/pricing', to: 'pages#pricing'
+  get '/landlord-resources', to: 'pages#resources', as: :resources
   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

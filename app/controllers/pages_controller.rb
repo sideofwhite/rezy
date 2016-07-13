@@ -1,10 +1,10 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, :except => [:landing, :help, :terms, :hello]
+  before_action :authenticate_user!, :except => [:landing, :help, :terms, :hello, :pricing, :resources]
 
 
   def landing
-    
-  	@bottom = true 
+    @bottom = true 
+  	
     @contact = Contact.new
   end
 
@@ -24,6 +24,14 @@ class PagesController < ApplicationController
 
   end
 
+  def resources
+
+  end
+
+ def pricing
+  @bottom = true 
+   @contact = Contact.new
+ end
 
 
   def hello
