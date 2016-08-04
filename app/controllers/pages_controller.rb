@@ -25,7 +25,7 @@ class PagesController < ApplicationController
   end
 
   def resources
-
+ @contact = Contact.new
   end
 
  def pricing
