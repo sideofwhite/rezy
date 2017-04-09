@@ -1,24 +1,7 @@
-# README
+<h1>Rezy</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p>Rezy is an unfinished rental management application. Finished features include a listing page with property details and a responsive image gallery, a dashboard for landlords to view tenant applications, a dashboard for tenants to submit maintenance requests and a landing/marketing page.</p>
 
-Things you may want to cover:
+<br>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<p>You can view a few screenshots <a href ="http://imgur.com/a/512mX">here</a></p>

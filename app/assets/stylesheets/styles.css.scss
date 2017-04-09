@@ -4,7 +4,7 @@ body {
 	    color: #484848;
 	-webkit-font-smoothing: antialiased;
 	font-size: 17px;
-	background-color: #fff;
+	background-color: #fafafa;
 
 
 }
@@ -58,7 +58,7 @@ p.description-small {
 
 .deposit {
 	margin-top: 10px;
-	font-size: 14px;
+	font-size: 15px;
 	color: #757575;
 }
 
@@ -151,7 +151,7 @@ h1.white-address {
 	font-weight: 400;
 	padding: 0px;
 	margin: 0px;
-	display: inline-block;
+	
 }
 
 p2 {
@@ -189,7 +189,8 @@ h2.tiny {
 }
 
 h5.small-h5 {
-	font-size: 11px;
+	font-size: 12px;
+	opacity: 0.75;
 	
 }
 
@@ -1807,7 +1808,8 @@ margin-bottom: 5px;
 .rental-head-section {
 
 	border-top: 1px solid #dedede;
-	background: #fafafa;
+	border-bottom: 1px solid #dedede;
+	background: white;
 	padding: 20px 0px;
 
 
@@ -2390,9 +2392,9 @@ p3 {
 
 .col-md-2.rent-box {
 	border: 1px solid rgba(51,51,51,0.1);
-	border-bottom: 0px; 
+	border-bottom: none;
 	text-align: center; 
-	margin-top: -20px;
+	margin-top: -21px;
 	margin-bottom: -20px;
 	background: #fff; 
 	z-index: 1; 
@@ -2630,7 +2632,7 @@ p3 {
     transition: opacity 0.2s;
     cursor: pointer !important;
     top: 250px;
-    margin-top: -30px;
+    margin-top: -38px;
     text-shadow: 1px 1px rgba(0,0,0,0.3);
 
 }
@@ -2641,13 +2643,13 @@ p3 {
 
 .material-icons.prev  {
 	 
-    left: 20px;
+    left: 28px;
 
 }
 
 .material-icons.next  {
 	
-    right: 20px;
+    right: 28px;
 
 }
 

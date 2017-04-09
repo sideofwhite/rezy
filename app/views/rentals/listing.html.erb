@@ -13,10 +13,11 @@
 
 
 <div id="owl-demo" class="owl-carousel owl-theme">
-<% @gallery_images.each do |gallery| %>
-<div class="carousel-image item" style="background-image: url(<%= gallery.image.url %>);"> </div>
-<% end %>
 
+<div class="carousel-image item" style="background-image: url(http://i.imgur.com/9Q1FGU8.jpg);"> </div>
+<div class="carousel-image item" style="background-image: url(http://i.imgur.com/dbJgM67.jpg);"> </div>
+
+<div class="carousel-image item" style="background-image: url(http://i.imgur.com/wDZQfnr.jpg);"> </div>
   
 </div>
 
@@ -30,7 +31,7 @@
  <div class="row">
  <div class="col-md-6 col-md-offset-2">
 
-  <h1 class="listing-name"><%= @rental.feature.bed %> Bed, <%= @rental.feature.bath %> Bath <%= @rental.feature.property_type.upcase_first %><div class="new-badge">New Listing</div></h1>
+  <h1 class="listing-name">2 Bed, <%= @rental.feature.bath %> Bath Apartment<div class="new-badge">New Listing</div></h1>
 
   <div>
   
@@ -65,7 +66,7 @@
   <div class="rent-box-padding"  style="padding: 20px 0px;">
   <div class="rent-box-number-wrapper">
    <span class="rent-box-number">
-    <%= @rental.feature.rent %>
+    1745
    
    <span class="monthly-rent">/mo</span>
    </span>
@@ -105,7 +106,7 @@
    <div>
     <div class="feature-icon dog"></div>
      <% if @rental.feature.dog? %>
-     <div class="feature-text">Dogs allowed</div>
+     <div class="feature-text not-allowed">No dogs allowed</div>
      <% else %>
      <div class="feature-text not-allowed">No dogs allowed</div>
     <% end %>
@@ -168,11 +169,33 @@ Location
 
     
      <p class="feature-text" style="line-height: 1.4; color: #484848; margin-top: 10px; margin-bottom: 5px; text-align: center; display: block;">5 other people are interested </p>
-   <p class="feature-text" style="text-align: center; display: block; line-height: 1.4; ">Apply now,
-because it won't last long.</p>
+   <p class="feature-text" style="text-align: center; display: block; line-height: 1.4; ">Apply now, it won't last long.</p>
     </div>
- </div>
 </div>
+
+ <div class="sidebar-box" style="margin-top: 20px;">
+ <p class="feature-text" style="line-height: 1.4; color: #484848; margin-top: 15px; margin-bottom: 10px; text-align: center; display: block;">Like this place?</p>
+   
+  
+<div style="width: 36%; margin: 0 auto; margin-bottom: 20px; border: 1px solid rgba(51,51,51,0.2); padding: 10px; border-radius: 2px; text-align: center; font-size: 14px;">
+<i class="material-icons" style="font-size: 20px; opacity: 0.5; margin-right: 5px; display: inline-block; float: left; margin-top: -1px;">favorite</i> <div style="display: inline-block; font-weight: 600;">Favorite</div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
 
 </div>
 
@@ -191,7 +214,7 @@ because it won't last long.</p>
 <%= @rental.address %>
 <hr/>
 <h5 class="large-h5">City</h5>	
-<%= @rental.city %>
+Waterloo
 <hr/>
 <h5 class="large-h5">Neighbourhood</h5>
 <%= @rental.feature.neighbourhood %>
